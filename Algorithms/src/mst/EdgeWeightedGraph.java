@@ -58,7 +58,7 @@ public class EdgeWeightedGraph
 
 	private void addEdge(Edge e)
 	{
-		int v = e.either();
+		int v = e.either(); 
 		int w = e.other(v);
 		adj[v].add(e);
 		adj[w].add(e);
@@ -70,6 +70,20 @@ public class EdgeWeightedGraph
 		return adj[v];
 	}
 
+	public Iterable<Edge> edges()
+	{
+		HashSet<Edge> allEdges=new HashSet<>();
+		for(int i=0;i<adj.length;i++)
+		{
+			for(Edge e:adj[i])
+			{
+				int w=e.other(i);
+				if(w>i) allEdges.add(e);
+			}
+		}
+		return allEdges;
+	}
+	
 	public String toString()
 	{
 		StringBuilder sBuilder = new StringBuilder();
@@ -90,8 +104,10 @@ public class EdgeWeightedGraph
 		 String filePath="src/data/tinyEWG.txt";
 		 EdgeWeightedGraph edgeWeightedGraph=new EdgeWeightedGraph(filePath);
 		// System.out.print(edgeWeightedGraph.toString());
-		 PrimMST primMST=new PrimMST(edgeWeightedGraph);
-		 System.out.print(primMST.toString());
+//		 PrimMST primMST=new PrimMST(edgeWeightedGraph);
+//		 System.out.print(primMST.toString());
+		 KruskalMST kruskalMST=new KruskalMST(edgeWeightedGraph);
+		 System.out.print(kruskalMST.toString());
 	
 	}
 
