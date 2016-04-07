@@ -33,6 +33,7 @@ public class Edge implements Comparable<Edge>
 		else if (this.weight>e.weight) return 1;
 		else return 0;
 	}
+	
 	public String toString()
 	{
 		StringBuilder sBuilder=new StringBuilder();
