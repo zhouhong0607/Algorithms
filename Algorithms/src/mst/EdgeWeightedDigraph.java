@@ -63,7 +63,7 @@ public class EdgeWeightedDigraph
 		return adj[v];
 	}
 
-	private void addEdge(DirectedEdge edge)
+	public void addEdge(DirectedEdge edge)
 	{
 		adj[edge.from()].add(edge);
 		eNum++;
