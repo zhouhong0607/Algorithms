@@ -25,7 +25,7 @@ public class Dijkstra
 		
 		distTo[source] = 0.0;
 
-		IndexMinPQ<Double> minPQ = new IndexMinPQ<>(dirGraph.eNum());
+		IndexMinPQ<Double> minPQ = new IndexMinPQ<>(n);
 		minPQ.enqueue(source, 0.0);
 		while (!minPQ.isEmpty())
 		{
