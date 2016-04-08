@@ -12,7 +12,7 @@ public class EdgeWeightedDigraph
 {
 	private int vNum;
 	private int eNum;
-	HashSet<DirectedEdge>[] adj;
+	private HashSet<DirectedEdge>[] adj;
 
 	public EdgeWeightedDigraph(int n)
 	{
@@ -87,15 +87,16 @@ public class EdgeWeightedDigraph
 
 	public static void  main(String[] args) throws Exception
 	{
-		String filePath="src/data/tinyEWDAG.txt";
+		String filePath="src/data/tinyEWDnc.txt";
 		EdgeWeightedDigraph edgeWeightedDigraph=new EdgeWeightedDigraph(filePath);
 //		System.out.print(edgeWeightedDigraph.toString());
 //		Dijkstra dijkstra=new Dijkstra(edgeWeightedDigraph, 0);
 //		System.out.print(dijkstra.toString());
 		
-		AcyclicSP acyclicSP=new AcyclicSP(edgeWeightedDigraph, 5);
-		System.out.print(acyclicSP.toString());
-		
+//		AcyclicSP acyclicSP=new AcyclicSP(edgeWeightedDigraph, 5);
+//		System.out.print(acyclicSP.toString());
+		BellmanFordSP bellmanFordSP=new BellmanFordSP(edgeWeightedDigraph, 0);
+		System.out.print(bellmanFordSP.hasNegativeCycle());
 	}
 
 }

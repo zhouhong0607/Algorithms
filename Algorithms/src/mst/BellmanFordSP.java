@@ -2,6 +2,7 @@ package mst;
 
 import java.util.LinkedList;
 import java.util.Queue;
+import java.util.Stack;
 
 public class BellmanFordSP
 {
@@ -10,7 +11,7 @@ public class BellmanFordSP
 	private boolean[] onQ;
 	private Queue<Integer> queue;
 	private int cost;
-	private Iterable<DirectedEdge> cycle;
+	private Stack<DirectedEdge> cycle;
 	
 	public BellmanFordSP(EdgeWeightedDigraph digraph,int source)
 	{
@@ -56,9 +57,11 @@ public class BellmanFordSP
 			{
 				findNegativeCycle();
 			}
+			
 		}
+		
 	}
-	private boolean hasNegativeCycle()
+	public boolean hasNegativeCycle()
 	{
 		return cycle!=null;
 	}
@@ -68,12 +71,14 @@ public class BellmanFordSP
 		EdgeWeightedDigraph spt=new EdgeWeightedDigraph(v);
 		for(int i=0;i<v;i++)
 		{
-			if(edgeTo[v]!=null)
-				spt.addEdge(edgeTo[v]);
+			if(edgeTo[i]!=null)
+				spt.addEdge(edgeTo[i]);
 		}
-		
-		
-		
-		
+		EdgeWeightedCycleFinder cf=new EdgeWeightedCycleFinder(spt);
+		cycle=cf.cycle();
+	}
+	public Stack<DirectedEdge> negativeCycle()
+	{
+		return cycle;
 	}
 }
