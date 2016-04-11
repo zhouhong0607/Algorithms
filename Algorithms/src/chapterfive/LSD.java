@@ -34,7 +34,8 @@ public class LSD
 		String[] a={"4DG38","2AYE23","3BI0720","1C50"};
 //		LSD.sort(a, 7);
 //		MSD.sort(a);
-		Arrays.sort(a);
+//		Arrays.sort(a);
+		MSD.quick3String(a);
  		for(int i=0;i<a.length;i++)
  		{
  			System.out.println(a[i]);

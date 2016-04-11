@@ -75,4 +75,31 @@ public class MSD
 		a[i]=a[j];
 		a[j]=s;
 	}
+	
+	public static void quick3String(String[] a)
+	{
+		quick3String(a, 0, a.length-1, 0);
+	}
+	private static void quick3String(String[] a,int low,int high,int d)
+	{
+		if(high<=low) return;
+		int lt=low;
+		int gt=high;
+		int v=charAt(a[low], d);
+		int i=low+1;
+		while(i<=gt)
+		{
+			int t=charAt(a[i], d);
+			if(t<v) exchange(a, i, lt++);
+			else if (t>v) exchange(a, i, gt--);
+			else i++;
+		}
+		
+		
+		sort(a, low, lt-1, d);
+		sort(a, lt, gt, d+1);
+		sort(a, gt+1, high, d);
+	}
+	
+	
 }
