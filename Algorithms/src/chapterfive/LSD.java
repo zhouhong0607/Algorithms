@@ -1,5 +1,9 @@
 package chapterfive;
 
+import java.util.Arrays;
+
+import javax.rmi.CORBA.Util;
+
 public class LSD
 {
 	public static void sort(String[] a, int width)
@@ -24,4 +28,18 @@ public class LSD
 			}
 		}
 	}
+	
+	public static void main(String[] args)throws Exception
+	{
+		String[] a={"4DG38","2AYE23","3BI0720","1C50"};
+//		LSD.sort(a, 7);
+//		MSD.sort(a);
+		Arrays.sort(a);
+ 		for(int i=0;i<a.length;i++)
+ 		{
+ 			System.out.println(a[i]);
+ 		}
+	}
+	
+	
 }
