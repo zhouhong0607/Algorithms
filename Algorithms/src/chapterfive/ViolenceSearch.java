@@ -7,6 +7,7 @@ import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.Reader;
 import java.util.Scanner;
+import java.util.regex.Pattern;
 import java.util.zip.ZipOutputStream;
 
 import data.StopWatch;
@@ -62,6 +63,8 @@ public class ViolenceSearch
 			txt += scanner.nextLine();
 		}
 		System.out.println(txt);
+		
+		
 		
 		
 //		FileOutputStream fileOut=new FileOutputStream("src/data/words3.txt");

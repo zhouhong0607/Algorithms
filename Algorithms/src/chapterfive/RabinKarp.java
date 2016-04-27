@@ -47,8 +47,11 @@ public class RabinKarp
 		return h;
 	}
 
-	// a random 31-bit prime
-	private static long longRandomPrime()
+	/**
+	 * 随机31位 素数
+	 * @return
+	 */
+	private  long longRandomPrime()
 	{
 		BigInteger prime = BigInteger.probablePrime(31, new Random());
 		return prime.longValue();
