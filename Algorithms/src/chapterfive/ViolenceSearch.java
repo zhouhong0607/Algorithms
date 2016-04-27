@@ -72,12 +72,14 @@ public class ViolenceSearch
 		String pat = "qqq";
 		KMP kmp=new KMP(pat);
 		BoyerMoore boyerMoore=new BoyerMoore(pat);
+		RabinKarp rabinKarp=new RabinKarp(pat);
 		
 		StopWatch stopWatch = new StopWatch();
 //		 System.out.println(ViolenceSearch.backSearch(pat, txt));
 //		System.out.println(ViolenceSearch.search(pat, txt));
 //		System.out.println(kmp.search(txt));
-		System.out.println(boyerMoore.search(txt));
+//		System.out.println(boyerMoore.search(txt));
+		System.out.println(rabinKarp.search(txt));
 		System.out.println(stopWatch.elapsedTime());      
 		scanner.close();
 	}
