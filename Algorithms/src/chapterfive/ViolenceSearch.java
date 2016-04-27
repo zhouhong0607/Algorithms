@@ -7,6 +7,7 @@ import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.Reader;
 import java.util.Scanner;
+import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.zip.ZipOutputStream;
 
@@ -76,13 +77,21 @@ public class ViolenceSearch
 		KMP kmp=new KMP(pat);
 		BoyerMoore boyerMoore=new BoyerMoore(pat);
 		RabinKarp rabinKarp=new RabinKarp(pat);
+//		"(.*"+regexp+".*)";
+		
+		NFA nfa=new NFA("(.*"+"(A|B)|C"+".*)");
+//		Pattern pattern=Pattern.compile("A*");
+//		Matcher matcher=pattern.matcher(txt);
+		
 		
 		StopWatch stopWatch = new StopWatch();
 //		 System.out.println(ViolenceSearch.backSearch(pat, txt));
 //		System.out.println(ViolenceSearch.search(pat, txt));
 //		System.out.println(kmp.search(txt));
 //		System.out.println(boyerMoore.search(txt));
-		System.out.println(rabinKarp.search(txt));
+//		System.out.println(rabinKarp.search(txt));
+		System.out.println(nfa.recognizes(txt));
+		System.out.println("Pattern:"+txt.matches(".*"+"(A|B)|C"+".*"));
 		System.out.println(stopWatch.elapsedTime());      
 		scanner.close();
 	}
