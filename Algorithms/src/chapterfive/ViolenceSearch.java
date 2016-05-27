@@ -79,7 +79,7 @@ public class ViolenceSearch
 		RabinKarp rabinKarp=new RabinKarp(pat);
 //		"(.*"+regexp+".*)";
 		
-		NFA nfa=new NFA("(.*"+"A"+".*)");
+		NFA nfa=new NFA("(.*"+"(A|B)|C"+".*)");
 //		Pattern pattern=Pattern.compile("A*");
 //		Matcher matcher=pattern.matcher(txt);
 		
@@ -91,7 +91,7 @@ public class ViolenceSearch
 //		System.out.println(boyerMoore.search(txt));
 //		System.out.println(rabinKarp.search(txt));
 		System.out.println(nfa.recognizes(txt));
-//		System.out.println("Pattern:"+txt.matches(".*"+"(A|B)|C"+".*"));
+		System.out.println("Pattern:"+txt.matches(".*"+"(A|B)|C"+".*"));
 		System.out.println(stopWatch.elapsedTime());      
 		scanner.close();
 	}
