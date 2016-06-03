@@ -99,5 +99,12 @@ public class RabinKarp
 		}
 		return N;
 	}
+	
+	public static void main(String[] aa)throws Exception
+	{
+		RabinKarp rabinKarp=new RabinKarp("a");
+		System.out.println(rabinKarp.search("aaa"));
+		
+	}
 
 }
